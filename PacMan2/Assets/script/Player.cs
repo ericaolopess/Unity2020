@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public float velocidade;
     public float rotaçao;
     public float correr;
-    public bool andar;
+  
 
 
     // Start is called before the first frame update
@@ -26,20 +26,25 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             velocidade = 0.08f;
+            GetComponent<Animator>().SetBool("andar",true);
+
         }
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             velocidade = 0;
+           GetComponent<Animator>().SetBool("andar",false);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             velocidade = -0.08f;
+            GetComponent<Animator>().SetBool("andar",true);
         }
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
             velocidade = 0;
+            GetComponent<Animator>().SetBool("andar", false);
         }
-        transform.Translate(velocidade, 0, 0);
+        transform.Translate(0, 0, velocidade);
 
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -68,7 +73,7 @@ public class Player : MonoBehaviour
         {
             correr = 0;
         }
-        transform.Translate(correr, 0, 0);
+        transform.Translate( 0, 0, correr);
     }
 }
 
