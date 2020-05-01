@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 4034341131136398486, guid: 80e2610c4f6641a43b8243dd4309944c,
         type: 3}
       propertyPath: m_Name
-      value: Inimigo
+      value: Inimigo Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034341131136398486, guid: 80e2610c4f6641a43b8243dd4309944c,
+        type: 3}
+      propertyPath: m_TagString
+      value: inimigo
       objectReference: {fileID: 0}
     - target: {fileID: 4034341131136398495, guid: 80e2610c4f6641a43b8243dd4309944c,
         type: 3}

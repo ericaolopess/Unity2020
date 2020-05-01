@@ -13,5 +13,15 @@ public class InimigoNovo : MonoBehaviour
             (GameObject.FindGameObjectWithTag("Player").transform.position);
 
     }
+
+
+    void OnCollisionEnter(Collision Collide)
+    {
+    
+        if (Collide.gameObject.tag == "tiro")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
 

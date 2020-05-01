@@ -16,7 +16,7 @@ public class tiro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(bala, 0, 0);
+        transform.Translate(0, 0, bala);
 
         if(transform.position.x > 50 || transform.position.x < -50 
              || transform.position.z > 50 || transform.position.z < -50)

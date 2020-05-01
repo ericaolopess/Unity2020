@@ -75,5 +75,16 @@ public class Player : MonoBehaviour
         }
         transform.Translate( 0, 0, correr);
     }
+
+    void OnCollisionEnter(Collision Collide)
+    {
+        print(Collide.gameObject.tag);
+        if (Collide.gameObject.tag == "inimigo")
+        {
+            print("Morreuuuuuuuuu");
+            //Destroy(gameObject);
+        }
+    }
+
 }
 
