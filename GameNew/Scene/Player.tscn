@@ -1,0 +1,137 @@
+[gd_scene load_steps=53 format=2]
+
+[ext_resource path="res://Scene/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprite/Run (1).png" type="Texture" id=2]
+[ext_resource path="res://Sprite/Run (2).png" type="Texture" id=3]
+[ext_resource path="res://Sprite/Run (3).png" type="Texture" id=4]
+[ext_resource path="res://Sprite/Run (4).png" type="Texture" id=5]
+[ext_resource path="res://Sprite/Run (5).png" type="Texture" id=6]
+[ext_resource path="res://Sprite/Run (6).png" type="Texture" id=7]
+[ext_resource path="res://Sprite/Run (7).png" type="Texture" id=8]
+[ext_resource path="res://Sprite/Run (8).png" type="Texture" id=9]
+[ext_resource path="res://Sprite/Jump (3).png" type="Texture" id=10]
+[ext_resource path="res://Sprite/Jump (1).png" type="Texture" id=11]
+[ext_resource path="res://Sprite/Jump (2).png" type="Texture" id=12]
+[ext_resource path="res://Sprite/Jump (4).png" type="Texture" id=13]
+[ext_resource path="res://Sprite/Jump (5).png" type="Texture" id=14]
+[ext_resource path="res://Sprite/Jump (6).png" type="Texture" id=15]
+[ext_resource path="res://Sprite/Jump (7).png" type="Texture" id=16]
+[ext_resource path="res://Sprite/Jump (8).png" type="Texture" id=17]
+[ext_resource path="res://Sprite/Idle (1).png" type="Texture" id=18]
+[ext_resource path="res://Sprite/Idle (2).png" type="Texture" id=19]
+[ext_resource path="res://Sprite/Idle (3).png" type="Texture" id=20]
+[ext_resource path="res://Sprite/Idle (4).png" type="Texture" id=21]
+[ext_resource path="res://Sprite/Idle (5).png" type="Texture" id=22]
+[ext_resource path="res://Sprite/Idle (6).png" type="Texture" id=23]
+[ext_resource path="res://Sprite/Idle (7).png" type="Texture" id=24]
+[ext_resource path="res://Sprite/Idle (8).png" type="Texture" id=25]
+[ext_resource path="res://Sprite/Idle (9).png" type="Texture" id=26]
+[ext_resource path="res://Sprite/Idle (10).png" type="Texture" id=27]
+[ext_resource path="res://Sprite/Dead (1).png" type="Texture" id=28]
+[ext_resource path="res://Sprite/Dead (2).png" type="Texture" id=29]
+[ext_resource path="res://Sprite/Dead (10).png" type="Texture" id=30]
+[ext_resource path="res://Sprite/Dead (3).png" type="Texture" id=31]
+[ext_resource path="res://Sprite/Dead (4).png" type="Texture" id=32]
+[ext_resource path="res://Sprite/Dead (5).png" type="Texture" id=33]
+[ext_resource path="res://Sprite/Dead (6).png" type="Texture" id=34]
+[ext_resource path="res://Sprite/Dead (7).png" type="Texture" id=35]
+[ext_resource path="res://Sprite/Dead (8).png" type="Texture" id=36]
+[ext_resource path="res://Sprite/Dead (9).png" type="Texture" id=37]
+[ext_resource path="res://Sprite/Walk (1).png" type="Texture" id=38]
+[ext_resource path="res://Sprite/Walk (2).png" type="Texture" id=39]
+[ext_resource path="res://Sprite/Walk (3).png" type="Texture" id=40]
+[ext_resource path="res://Sprite/Walk (4).png" type="Texture" id=41]
+[ext_resource path="res://Sprite/Walk (5).png" type="Texture" id=42]
+[ext_resource path="res://Sprite/Walk (6).png" type="Texture" id=43]
+[ext_resource path="res://Sprite/Walk (7).png" type="Texture" id=44]
+[ext_resource path="res://Sprite/Walk (8).png" type="Texture" id=45]
+[ext_resource path="res://Sprite/Walk (9).png" type="Texture" id=46]
+[ext_resource path="res://Sprite/Walk (10).png" type="Texture" id=47]
+[ext_resource path="res://Scene/AreaPe.gd" type="Script" id=48]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ) ],
+"loop": false,
+"name": "Die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 29.6913
+height = 52.8258
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8.568, 4.61244 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 32.8672
+height = 50.2748
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 15.978, 7.989 )
+script = ExtResource( 1 )
+
+[node name="spaw_bullet" type="Position2D" parent="."]
+visible = false
+position = Vector2( 8, 5 )
+scale = Vector2( 0.272815, 0.262012 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -14.5095, -24.5572 )
+scale = Vector2( 0.272815, 0.262012 )
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -19.4376, -20.887 )
+shape = SubResource( 2 )
+
+[node name="RayD" type="RayCast2D" parent="."]
+position = Vector2( 3.38506, -15.4099 )
+enabled = true
+
+[node name="RayE" type="RayCast2D" parent="."]
+position = Vector2( -42.5702, -14.4975 )
+enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 48 )
+
+[node name="pes" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2( -18.8178, 33.6976 )
+shape = SubResource( 3 )
+
+[node name="dano" type="Area2D" parent="."]
+visible = false
+
+[node name="dano" type="CollisionShape2D" parent="dano"]
+visible = false
+position = Vector2( -19.3312, -22.7453 )
+shape = SubResource( 4 )
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="dano" to="." method="_on_dano_body_entered"]
