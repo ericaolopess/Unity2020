@@ -6,6 +6,7 @@ TagManager:
   tags:
   - tiro
   - inimigo
+  - HUD
   layers:
   - Default
   - TransparentFX

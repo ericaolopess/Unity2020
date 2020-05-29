@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class Player : MonoBehaviour
 {
     public float velocidade;
     public float rotaçao;
     public float correr;
-  
+    public int vidas;
+    public GameObject Life;
+    public GameObject Scrollbar;
+    public float porcentagem;
+
 
 
     // Start is called before the first frame update
@@ -16,8 +23,11 @@ public class Player : MonoBehaviour
         velocidade = 0;
         rotaçao = 0;
         correr = 0;
+        vidas = 10;
+        porcentagem = 1;
 
-
+        Life.GetComponent<Text>().text = "Vida: " + vidas;
+        Scrollbar.GetComponent<Scrollbar>().size = porcentagem;
     }
 
     // Update is called once per frame
@@ -78,13 +88,24 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision Collide)
     {
-        print(Collide.gameObject.tag);
         if (Collide.gameObject.tag == "inimigo")
         {
-            print("Morreuuuuuuuuu");
-            //Destroy(gameObject);
+            print(vidas);
+            vidas--;
+
+            Life.GetComponent<Text>().text = "Vida: " + vidas;
+            porcentagem -= 0.1f;
+            print(porcentagem);
+            Scrollbar.GetComponent<Scrollbar>().size = porcentagem;
+            if (vidas == 0)
+            {
+                //Destroy(gameObject);
+                //SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+            }
+
         }
     }
-
 }
 
